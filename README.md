@@ -30,7 +30,8 @@ Example `/metrics` output:
     - `promhttp_metric_handler_requests_in_flight`
 
 Example:
-```text
+```
+text
 healthcheck_http_status_total{domain="https://example.com",status="200 OK"} 15
 healthcheck_http_status_total{domain="https://google.com",status="200 OK"} 15
 ```
@@ -47,20 +48,24 @@ Git
 
 Clone
 
-```git clone https://github.com/<your-org>/external-health-check.git
+```
+git clone https://github.com/<your-org>/external-health-check.git
 cd external-health-check
 ```
 
 Run locally
-```go run cmd/external-health-check/main.go
+```
+go run cmd/external-health-check/main.go
 ```
 
 By default, the service exposes metrics at:
-```http://localhost:8080/metrics
+```
+http://localhost:8080/metrics
 ```
 
 Build binary
-```go build -o external-health-check ./cmd/external-health-check
+```
+go build -o external-health-check ./cmd/external-health-check
 ```
 
 Run
@@ -71,7 +76,8 @@ Build image
 ```docker build -t external-health-check .```
 
 Run container
-```docker run --rm -p 8080:8080 --env-file .env external-health-check
+```
+docker run --rm -p 8080:8080 --env-file .env external-health-check
 ```
 
 Configuration
@@ -79,7 +85,8 @@ Configuration
 Domains for health checks can be configured via environment variables.
 
 Example of configuration in configs/config.yaml:
-```domains:
+```
+domains:
   - https://google.com
   - https://example.com
 ```
